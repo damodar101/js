@@ -37,11 +37,11 @@ console.log(maxValue([1, 2, 3, 4, 5, 6]));
 // even
 function even(num) {
   const evenNumbers = [];
-  for (let a of num) {
-    if (a % 2 == 0) {
-      evenNumbers.push(a);
+  num.forEach((curelement)=>{
+    if(curelement%2===0){
+        evenNumbers.push(curelement)
     }
-  }
+  })
   return evenNumbers;
 }
 
@@ -69,6 +69,7 @@ function grade(num) {
   } else if (num > 60 && num <= 70) {
     return "D grade";
   }
+  return "failed"
 }
 
 console.log(grade(93));
