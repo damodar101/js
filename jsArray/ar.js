@@ -72,13 +72,15 @@ const students = [
 ];
 
 let container = document.getElementById("main");
-let searchBar=document.querySelector("#search")
+let searchBar = document.querySelector("#search");
+
 
 function renderStudents(lst) {
+
+  lst.sort((a,b)=>parseInt(a.grade)-parseInt(b.grade))
   let output = "";
 
   lst.forEach((item) => {
-
     output += `
      <div class="itemsin">
         <h2 style="color:#00fff7">Name:${item.name}</h2>
@@ -88,32 +90,34 @@ function renderStudents(lst) {
         <p>Gender:${item.gender}</p>  
     
     </div>
+
+    
     
    `;
   });
-
-   container.innerHTML = output;
+  
+  container.innerHTML = output;
 }
 
+function searchStudents(searchBar) {
+  let valueFromBar = searchBar.value.toLowerCase();
+ 
 
-function searchStudents(searchBar){
-    let valueFromBar=searchBar.value.toLowerCase();
-   
-
-    const resultStudents=students.filter((currStudent)=>{
-       return  (currStudent.name.toLowerCase().includes(valueFromBar)||
-               currStudent.address.toLowerCase().includes(valueFromBar)||
-             currStudent.grade.toLowerCase().includes(valueFromBar)
-    )
-    })
+  let resultStudents = students.filter(
+    (currStudent) =>
+      currStudent.name.toLowerCase().includes(valueFromBar) ||
+      currStudent.address.toLowerCase().includes(valueFromBar) ||
+      currStudent.grade.toLowerCase().includes(valueFromBar)
+  );
 
 
-   
-    renderStudents(resultStudents)
+  renderStudents(resultStudents);
 }
-searchBar.addEventListener("input",()=>{
-    searchStudents(searchBar)
-})
+searchBar.addEventListener("input", () => {
+  searchStudents(searchBar);
+});
+
+
+
 
 renderStudents(students);
-
