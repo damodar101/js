@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assessts/app.css">
+</head>
+<body>
+    <h2>User Data</h2>
+
+    <div class="top-menu">
+        <input type="text" style="width:70%;margin-bottom: 10px;" placeholder="search here" id="search">
+
+        <select id="sort">
+            <option value="selected">Sort By Grade</option>
+          
+            <option value="asc">Asc</option>
+            <option value="dsc">Dsc</option>
+        </select>
+        <select id="gender">
+            <option value="">Sort By Gender</option>
+            <option value="all">All</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+    <div class="table">
+      <table border="3">
+      <thead>
+        <tr>
+          <th >NAME</th>
+          <th >AGE</th>
+          <th>DOB</th>
+          <th >LOCATION</th>
+          <th >GENDER</th>
+          <th>CGPA</th>
+          <th>COURSE</th>
+        </tr>
+      </thead>
+      <tbody class="body">
+      
+      </tbody>
+    </table>
+</div>
+
+
+   <div class="btm">
+      <select id="btn">
+        <option value="rows">rows</option>
+        <option vlaue=5>5</option>
+        <option vlaue=10>10</option>
+        <option vlaue=15>15</option>
+      </select>
+   </div>
+ 
+
+    <script src="./assessts/app.js"></script>
+</body>
+</html>
