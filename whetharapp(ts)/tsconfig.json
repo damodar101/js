@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2020",          // Modern JS output
+    "module": "es2020",          // Browser-friendly module system
+    "rootDir": "./src",           // TS source folder
+    "outDir": "./dist",           // Compiled JS folder
+    "strict": true,               // All strict type checks
+    "esModuleInterop": true,      // Allow import from commonjs modules
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "sourceMap": true             // Optional, useful for debugging
+  },
+  "include": ["src/**/*"]
+}
